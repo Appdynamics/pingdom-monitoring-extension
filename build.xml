@@ -1,0 +1,36 @@
+<project default="build">
+    <property name="build.dir" value="dist" />
+    <property name="conf.dir" value="conf" />
+    <property name="project.name" value="PingdomMonitor"/>
+    <property name="lib.dir" value="lib"/>
+    <path id="cp">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+    </path>
+    <target name="build">
+        <mkdir dir="${build.dir}/classes"/>
+        <javac destdir="${build.dir}/classes" srcdir="src/main/java" classpathref="cp" debug="on"/>
+        <mkdir dir="${build.dir}/PingdomMonitor"/>
+        <jar destfile="${build.dir}/PingdomMonitor/${project.name}.jar">
+            <fileset dir="${build.dir}/classes"/>
+        </jar>
+        <copy todir="${build.dir}/PingdomMonitor/">
+            <fileset dir="${conf.dir}" includes="monitor.xml"/>
+        </copy>
+    	<copy todir="${build.dir}/PingdomMonitor/lib/">
+    	   	<fileset dir="${lib.dir}/json" includes="json-simple-1.1.1.jar"/>
+    	</copy>
+    	<copy todir="${build.dir}/PingdomMonitor/lib/">
+    	    <fileset dir="${lib.dir}" includes="httpclient/*"/>
+    	</copy>
+        <delete dir="${build.dir}/classes"/>
+    </target>
+    <target name="package" depends="build">
+        <zip destfile="${build.dir}/PingdomMonitor.zip">
+            <zipfileset dir="${build.dir}/PingdomMonitor" filemode="755" prefix="PingdomMonitor"/>
+        </zip>
+        <delete dir="${build.dir}/PingdomMonitor"/>
+    </target>
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+</project>

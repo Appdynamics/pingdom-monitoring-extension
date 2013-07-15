@@ -1,0 +1,35 @@
+<monitor>
+        <name>PingdomMonitor</name>
+        <type>managed</type>
+        <description>Reports key metrics from Pingdom using REST</description>
+        <monitor-configuration></monitor-configuration>
+        <monitor-run-task>
+                <execution-style>continuous</execution-style>
+                <name>Pingdom Monitor Run Task</name>
+                <display-name>Pingdom Monitor Task</display-name>
+                <description>Pingdom Monitor Task</description>
+                <type>java</type>
+                <java-task>
+                        <classpath>PingdomMonitor.jar;lib/json-simple-1.1.1.jar;/lib/httpclient/commons-codec-1.6.jar;lib/httpclient/commons-logging-1.1.1.jar;lib/httpclient/fluent-hc-4.2.5.jar;lib/httpclient/httpclient-4.2.5.jar;lib/httpclient/httpclient-cache-4.2.5.jar;lib/httpclient/httpcore-4.2.4.jar;lib/httpclient/httpmime-4.2.5.jar</classpath>
+                        <impl-class>com.appdynamics.monitors.pingdom.PingdomMonitor</impl-class>
+                </java-task>
+               
+                <task-arguments>
+                		<!-- CONFIGURE USER CREDENTIALS:
+                     		App-Key: you generate your application key inside the Pingdom control panel
+                     		(default value of App-Key is a non-working dummy, to show what the format looks like)
+                		-->
+                        <argument name="Username" is-required="true" default-value="Username"/>
+                        <argument name="Password" is-required="true" default-value="Password"/>
+                        <argument name="App-Key" is-required="true" default-value="zoent8w9cbt810rsdkweir23vcxb87zrt5541"/>
+                        
+                        <!-- CONFIGURE METRIC PATH (OPTIONAL):
+                     		You can configure a metric path, such that only one tier is going to receive
+                     		metrics from this monitor. The pattern is: Server|Component:<id or name>|Pingdom Monitor
+                     		Default (if default-value="") is "Custom Metrics|Pingdom Monitor" under 
+                     		Application Infrastructure Performance in every tier
+                		-->
+                        <argument name="Metric-Path" is-required="false" default-value=""/>
+                </task-arguments>
+        </monitor-run-task>
+</monitor>
