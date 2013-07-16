@@ -14,28 +14,46 @@ tags for your Pingdom credentials, as well as a tag where you can specify your o
 path. If you specify the metric path, only a single tier will receive metrics from this
 monitor.  
 
-1.  Create a new directory in the \<machine agent home\>/monitors directory.
-2.  Copy the contents in the 'dist' folder to the folder you created in
-    step 1.
-3.  In the monitor.xml file:
+1. Run 'ant package' from the pingdom-monitoring-extension directory
+2. Download the file PingdomMonitor.zip found in the 'dist' directory into \<machineagent install dir\>/monitors/
+3. Unzip the downloaded file
+4. In monitor.xml in the PingdomMonitor directory:
     1.  set the credentials to your Pingdom account
     2.  configure your own metric path (optional)
-
-4.  Restart the Machine Agent.
-5.  Look for the metrics in the Metric Browser at: "Custom Metrics|Pingdom Monitor" or your specified path.
+5. Restart the machineagent
+6. In the AppDynamics Metric Browser, look for: Application Infrastructure Performance  | \<Tier\> | Custom Metrics | Pingdom Monitor or your specified path..
 
 ##Files
 
 Files/Folders Included:
 
-|**Directory/File** | **Description**|
-| ------------- |:-------------|
-|bin |Contains class files|
-|conf|Contains the monitor.xml|
-|lib|Contains third-party project references|
-|src|Contains source code to the Pingdom Monitor|
-|dist|Contains the distribution package (monitor.xml, the lib directory, and pingdomMonitor.jar) |
-|build.xml|Ant build script to package the project (required only if changing Java code)|
+<table><tbody>
+<tr>
+<th align = 'left'> Directory/File </th>
+<th align = 'left'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> conf </td>
+<td class='confluenceTd'> Contains the monitor.xml </td>
+</tr>
+<tr>
+<td class='confluenceTd'> lib </td>
+<td class='confluenceTd'> Contains third-party project references </td>
+</tr>
+<tr>
+<td class='confluenceTd'> src </td>
+<td class='confluenceTd'> Contains source code to Pingdom Monitoring Extension </td>
+</tr>
+<tr>
+<td class='confluenceTd'> dist </td>
+<td class='confluenceTd'> Only obtained when using ant. Run 'ant build' to get binaries. Run 'ant package' to get the distributable .zip file </td>
+</tr>
+<tr>
+<td class='confluenceTd'> build.xml </td>
+<td class='confluenceTd'> Ant build script to package the project (required only if changing Java code) </td>
+</tr>
+</tbody>
+</table>
 
 
 ##XML Example
@@ -57,13 +75,13 @@ Files/Folders Included:
 <tr>
 <td>App-Key
 </td>
-<td>The Pingdom App-Key, found at [https://my.pingdom.com/account/appkeys](https://my.pingdom.com/account/appkeys)
+<td>The Pingdom Application Key, found at https://my.pingdom.com/account/appkeys
 </td>
 </tr>
 <tr>
 <td>Metric-Path
 </td>
-<td>Optional: set your own metric path. The pattern is: Server | Component:(id or name) | Pingdom Monitor 
+<td>Optional: set your own metric path. The pattern is: Server | Component:\<id or name\> | Pingdom Monitor 
 </td>
 </tr>
 </table>
@@ -82,7 +100,7 @@ Files/Folders Included:
                 <description>Pingdom Monitor Task</description>
                 <type>java</type>
                 <java-task>
-                        <classpath>pingdomMonitor.jar;lib/json-simple-1.1.1.jar;/lib/httpclient/commons-codec-1.6.jar;lib/httpclient/commons-logging-1.1.1.jar;lib/httpclient/fluent-hc-4.2.5.jar;lib/httpclient/httpclient-4.2.5.jar;lib/httpclient/httpclient-cache-4.2.5.jar; lib/httpclient/httpcore-4.2.4.jar;lib/httpclient/httpmime-4.2.5.jar</classpath>
+                        <classpath>PingdomMonitor.jar;lib/json-simple-1.1.1.jar;/lib/httpclient/commons-codec-1.6.jar;lib/httpclient/commons-logging-1.1.1.jar;lib/httpclient/fluent-hc-4.2.5.jar;lib/httpclient/httpclient-4.2.5.jar;lib/httpclient/httpclient-cache-4.2.5.jar; lib/httpclient/httpcore-4.2.4.jar;lib/httpclient/httpmime-4.2.5.jar</classpath>
                         <impl-class>com.appdynamics.monitors.pingdom.PingdomMonitor</impl-class>
                 </java-task>
  
