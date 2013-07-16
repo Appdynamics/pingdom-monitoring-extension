@@ -21,7 +21,7 @@ monitor.  
     1.  set the credentials to your Pingdom account
     2.  configure your own metric path (optional)
 5. Restart the machineagent
-6. In the AppDynamics Metric Browser, look for: Application Infrastructure Performance  | \<Tier\> | Custom Metrics | Pingdom Monitor or your specified path..
+6. In the AppDynamics Metric Browser, look for: Application Infrastructure Performance  | \<Tier\> | Custom Metrics | Pingdom Monitor or your specified path.
 
 ##Files
 
@@ -133,6 +133,114 @@ external web site (on the right).
 
 ![](images/pingdom_01.png)
 
+##Metrics
+
+###Checks
+
+####For each website which Pingdom is tracking:
+
+
+<table><tbody>
+<tr>
+<th align = 'left'> Metric Name </th>
+<th align = 'left'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> id </td>
+<td class='confluenceTd'> The Pingdom Check id </td>
+</tr>
+<tr>
+<td class='confluenceTd'> lastresponsetime </td>
+<td class='confluenceTd'> The latest response time Pingdom observed </td>
+</tr>
+<tr>
+<td class='confluenceTd'> lasttesttime </td>
+<td class='confluenceTd'> The last time Pingdom made a Check on the website (hour of day) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> resolution </td>
+<td class='confluenceTd'> The time resolution of the Check </td>
+</tr>
+<tr>
+<td class='confluenceTd'> status </td>
+<td class='confluenceTd'> 0: down, 1: up, 5: unconfirmed_down, 20: unknown, 50: paused </td>
+</tr>
+</tbody>
+</table>
+
+
+###Credits
+
+
+<table><tbody>
+<tr>
+<th align = 'left'> Metric Name </th>
+<th align = 'left'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> autofillsms </td>
+<td class='confluenceTd'> 0: disabled, 1: enabled </td>
+</tr>
+<tr>
+<td class='confluenceTd'> availablechecks </td>
+<td class='confluenceTd'> Free check slots available for new checks </td>
+</tr>
+<tr>
+<td class='confluenceTd'> availablesms </td>
+<td class='confluenceTd'> SMS credits remaining on this account </td>
+</tr>
+<tr>
+<td class='confluenceTd'> availablesmstests </td>
+<td class='confluenceTd'> SMS provider tests remaining on this account </td>
+</tr>
+<tr>
+<td class='confluenceTd'> checklimit </td>
+<td class='confluenceTd'> Total number of check slots on this account </td>
+</tr>
+</tbody>
+</table>
+
+
+
+### Limits
+
+The Pingdom API has usage limits to avoid individual rampant applications degrading the overall user experience. There are two layers of limits, the first cover a shorter period of time and the second a longer period. Although we never ran into any troubles with our interval of REST API calls alone, this gives you a view of the total usage of the REST API for your account. If you have other applications calling the Pingdom REST API, you can monitor the remaining calls with these metrics
+
+#### Req-Limit-Short
+
+<table><tbody>
+<tr>
+<th align = 'left'> Metric Name </th>
+<th align = 'left'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Remaining </td>
+<td class='confluenceTd'> The number of requests left until the short limit is reached </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Time until reset </td>
+<td class='confluenceTd'> Number of seconds until the short limit will be reset </td>
+</tr>
+</tbody>
+</table>
+
+#### Req-Limit-Long
+
+<table><tbody>
+<tr>
+<th align = 'left'> Metric Name </th>
+<th align = 'left'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> Remaining </td>
+<td class='confluenceTd'> The number of requests left until the long limit is reached </td>
+</tr>
+<tr>
+<td class='confluenceTd'> Time until reset </td>
+<td class='confluenceTd'> Number of seconds until the long limit will be reset </td>
+</tr>
+</tbody>
+</table>
 
 ##Contributing
 
