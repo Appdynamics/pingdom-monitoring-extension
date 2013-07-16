@@ -81,7 +81,7 @@ Files/Folders Included:
 <tr>
 <td>Metric-Path
 </td>
-<td>Optional: set your own metric path. The pattern is: Server | Component:\<id or name\> | Pingdom Monitor 
+<td>Optional: set your own metric path. The pattern is: Server | Component:id or name | Pingdom Monitor 
 </td>
 </tr>
 </table>
