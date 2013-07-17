@@ -27,7 +27,7 @@ monitor.  
 
 <table><tbody>
 <tr>
-<th align = 'left'> Files/Folders </th>
+<th align = 'left'> File/Folder </th>
 <th align = 'left'> Description </th>
 </tr>
 <tr>
