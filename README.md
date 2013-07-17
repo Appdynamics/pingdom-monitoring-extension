@@ -1,10 +1,7 @@
 # AppDynamics Pingdom - Monitoring Extension
 
 ##Use Case
-Pingdom ([https://www.pingdom.com/](https://www.pingdom.com/)) is a service that tracks website uptime, 
-downtime, and performance. The Pingdom extension uses the REST API from Pingdom to retrieve key
-metrics for your Pingdom Checks. It also retrieves other important data 
-such as remaining Checks and remaining SMS credits.
+Pingdom ([https://www.pingdom.com/](https://www.pingdom.com/)) is a service that tracks website uptime, downtime, and performance. The Pingdom extension uses the REST API from Pingdom to retrieve key metrics for your Pingdom Checks. It also retrieves other important data such as remaining Checks and remaining SMS credits.
 
 
 ##Installation
@@ -23,12 +20,12 @@ monitor.  
 5. Restart the machineagent
 6. In the AppDynamics Metric Browser, look for: Application Infrastructure Performance  | \<Tier\> | Custom Metrics | Pingdom Monitor or your specified path.
 
-##Files and Folders Included:
+##Directory Structure:
 
 <table><tbody>
 <tr>
-<th align = 'left'> File/Folder </th>
-<th align = 'left'> Description </th>
+<th align="left"> File/Folder </th>
+<th align="left"> Description </th>
 </tr>
 <tr>
 <td class='confluenceTd'> conf </td>
@@ -56,8 +53,8 @@ monitor.  
 
 ##monitor.xml
 <table>
-<th align = 'left'> Parameter </th>
-<th align = 'left'> Description </th>
+<th align="left"> Parameter </th>
+<th align="left"> Description </th>
 <tr>
 <td>Username
 </td>
@@ -140,8 +137,8 @@ external web site (on the right).
 
 <table><tbody>
 <tr>
-<th align = 'left'> Metric Name </th>
-<th align = 'left'> Description </th>
+<th align="left"> Metric Name </th>
+<th align="left"> Description </th>
 </tr>
 <tr>
 <td class='confluenceTd'> id </td>
@@ -172,8 +169,8 @@ external web site (on the right).
 
 <table><tbody>
 <tr>
-<th align = 'left'> Metric Name </th>
-<th align = 'left'> Description </th>
+<th align="left"> Metric Name </th>
+<th align="left"> Description </th>
 </tr>
 <tr>
 <td class='confluenceTd'> autofillsms </td>
@@ -208,8 +205,8 @@ The Pingdom API has usage limits to avoid individual rampant applications degrad
 
 <table><tbody>
 <tr>
-<th align = 'left'> Metric Name </th>
-<th align = 'left'> Description </th>
+<th align="left"> Metric Name </th>
+<th align="left"> Description </th>
 </tr>
 <tr>
 <td class='confluenceTd'> Remaining </td>
@@ -226,8 +223,8 @@ The Pingdom API has usage limits to avoid individual rampant applications degrad
 
 <table><tbody>
 <tr>
-<th align = 'left'> Metric Name </th>
-<th align = 'left'> Description </th>
+<th align="left"> Metric Name </th>
+<th align="left"> Description </th>
 </tr>
 <tr>
 <td class='confluenceTd'> Remaining </td>
@@ -240,11 +237,15 @@ The Pingdom API has usage limits to avoid individual rampant applications degrad
 </tbody>
 </table>
 
+
 ##Contributing
 
-Always feel free to fork and contribute any changes directly via GitHub.
+Always feel free to fork and contribute any changes directly via [GitHub](https://github.com/Appdynamics/pingdom-monitoring-extension).
 
+##Community
+
+Find out more in the [AppSphere](http://appsphere.appdynamics.com/t5/Extensions/Pingdom-Monitoring-Extension/idi-p/1317) community.
 
 ##Support
 
-For any support questions, please contact ace@appdynamics.com.
+For any questions or feature request, please contact [AppDynamics Center of Excellence](mailto://ace-request@appdynamics.com).
