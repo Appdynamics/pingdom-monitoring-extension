@@ -1,4 +1,4 @@
-# AppDynamics Pingdom Monitoring Extension
+# AppDynamics Pingdom - Monitoring Extension
 
 ##Use Case
 Pingdom ([https://www.pingdom.com/](https://www.pingdom.com/)) is a service that tracks website uptime, 
@@ -18,18 +18,16 @@ monitor.  
 2. Download the file PingdomMonitor.zip found in the 'dist' directory into \<machineagent install dir\>/monitors/
 3. Unzip the downloaded file
 4. In monitor.xml in the PingdomMonitor directory:
-    1.  set the credentials to your Pingdom account
-    2.  configure your own metric path (optional)
+    a.  Set the credentials to your Pingdom account.
+    b.  Sonfigure your own metric path (optional).
 5. Restart the machineagent
 6. In the AppDynamics Metric Browser, look for: Application Infrastructure Performance  | \<Tier\> | Custom Metrics | Pingdom Monitor or your specified path.
 
-##Files
-
-Files/Folders Included:
+##Files and Folders Included:
 
 <table><tbody>
 <tr>
-<th align = 'left'> Directory/File </th>
+<th align = 'left'> Files/Folders </th>
 <th align = 'left'> Description </th>
 </tr>
 <tr>
@@ -46,7 +44,7 @@ Files/Folders Included:
 </tr>
 <tr>
 <td class='confluenceTd'> dist </td>
-<td class='confluenceTd'> Only obtained when using ant. Run 'ant build' to get binaries. Run 'ant package' to get the distributable .zip file </td>
+<td class='confluenceTd'> Only obtained when using ant. Run 'ant build' to get binaries. Run 'ant package' to get the distributable .zip file. </td>
 </tr>
 <tr>
 <td class='confluenceTd'> build.xml </td>
@@ -126,12 +124,12 @@ Files/Folders Included:
 
 ~~~~
 
-##Custom Dashboard example
+##Custom Dashboard Example
 The custom dashboard below contains a custom heading graphic, three monitors, and an iframe containing an 
 external web site (on the right).
 
 
-![](images/pingdom_01.png)
+![](http://appsphere.appdynamics.com/t5/image/serverpage/image-id/89i23687572CAA26EC0/image-size/original?v=mpbl-1&px=-1)
 
 ##Metrics
 
