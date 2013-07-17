@@ -56,7 +56,7 @@ Files/Folders Included:
 </table>
 
 
-##XML Example
+##monitor.xml
 <table>
 <th align = 'left'> Parameter </th>
 <th align = 'left'> Description </th>
