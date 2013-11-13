@@ -1,6 +1,6 @@
 # AppDynamics Pingdom - Monitoring Extension
 
-This extension works only with the Java agent.
+This extension works only with the standalone machine agent.
 
 ##Use Case
 Pingdom ([https://www.pingdom.com/](https://www.pingdom.com/)) is a service that tracks website uptime, downtime, and performance. The Pingdom extension uses the REST API from Pingdom to retrieve key metrics for your Pingdom Checks. It also retrieves other important data such as remaining Checks and remaining SMS credits.
