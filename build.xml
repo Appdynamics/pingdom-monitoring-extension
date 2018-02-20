@@ -22,6 +22,12 @@
     	<copy todir="${build.dir}/PingdomMonitor/lib/">
     	    <fileset dir="${lib.dir}" includes="httpclient/*"/>
     	</copy>
+        <copy todir="${build.dir}/PingdomMonitor/">
+            <fileset dir="" includes="LICENSE"/>
+        </copy>
+        <copy todir="${build.dir}/PingdomMonitor">
+            <fileset dir="" includes="NOTICE.txt"/>
+        </copy>
         <delete dir="${build.dir}/classes"/>
     </target>
     <target name="package" depends="build">
